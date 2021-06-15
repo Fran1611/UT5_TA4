@@ -99,7 +99,14 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public long calcularCosto(int[] FrecExito, int[] FrecNoExito) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (raiz != null){
+            int[] indiceFE = new int[]{1};
+            int[] indiceFNE = new int[]{0};
+            return raiz.calcularCosto(FrecExito, FrecNoExito, indiceFE, indiceFNE, 1);
+        }
+        else {
+            return 0;
+        }
     }
 
 }
